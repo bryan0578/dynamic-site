@@ -1,0 +1,71 @@
+
+/*Bryan Cash
+  1/28/15
+  DPW
+  Dynamic Site*/
+
+body{
+    font-family:arial;
+    background:#E5E5E5;
+}
+#container{
+    width:90%;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+h1, h2{
+    text-align:center;
+}
+h1{
+    background:#39587F;
+    border: 1px solid #333;
+    border-radius:5px;
+    padding:20px;
+    width:70%;
+    margin-left:auto;
+    margin-right:auto;
+    color:#E5E5E5;
+}
+#ad{
+    width:70%;
+    margin-left:auto;
+    margin-right:auto;
+    margin-bottom:50px;
+}
+nav{
+    background:#333;
+    margin-left:14%;
+    margin-top:30px;
+    padding:0;
+    width:200px;
+    float:left;
+
+}
+nav li{
+    list-style:none;
+
+}
+nav a{
+    background: #333;
+    border-bottom:1px solid #393939;
+    color:#ccc;
+    display:block;
+    padding: 8px;
+    text-decoration:none;
+}
+nav li a:hover{
+    background:#252525;
+    color:#fff;
+    padding-bottom: 8px;
+}
+#content{
+    width:60%;
+    float:left;
+    margin-left:5%;
+}
+#img{
+    margin-right:15%;
+    margin-top:-110px;
+    float:right;
+}
