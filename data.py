@@ -28,7 +28,7 @@ class Shirt(object):
         woman.id = 'victorian_woman'
         woman.name = 'Victorian Woman'
         woman.size = '<select><option>Xs</option><option>Sm</option><option>Med</option><option>Lg</option><option>XL</option><option>XXL</option></select>'
-        woman.img = '/images/bts-woman.png'
+        woman.img = 'images/bts-woman.png'
         woman.description = 'Black shirt with a victorian woman in a dress and umbrella and a skull face. This shirt is pres-hrunk and is machine washable.'
         woman.price = '$15'
         woman.final_price = '$7.50'
