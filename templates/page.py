@@ -13,7 +13,7 @@ class Page(object):
         # Title attribute that contains the welcome text
         self.title = "Welcome!"
         # Created css attribute this points to the css file in html
-        self.css = "css/styles.css"
+        self.css = "static/css/styles.css"
         # Created head attribute
         self.head = '''
 <!DOCTYPE HTML>
