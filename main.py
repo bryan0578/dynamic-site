@@ -7,6 +7,7 @@ Dynamic Site
 
 
 import webapp2
+
 #I imported the ContentPage class from the page.py file
 from page import ContentPage
 #Imported the Shirt class from the data.py file
