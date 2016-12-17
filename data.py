@@ -61,7 +61,7 @@ class Shirt(object):
         f_bomb.id = "f_bomb"
         f_bomb.name = 'F-Bomb'
         f_bomb.size = '<select><option>Xs</option><option>Sm</option><option>Med</option><option>Lg</option><option>XL</option><option>XXL</option></select>'
-        f_bomb.img = 'images/bts-fshirt.png'
+        f_bomb.img = '../images/bts-fshirt.png'
         f_bomb.description = 'Black shirt with Blue and purple background, following the traditional "F-Bomb shirts many metal bands are using today but with a little twist.'
         f_bomb.price = '$15'
         f_bomb.final_price = '$7.50'
