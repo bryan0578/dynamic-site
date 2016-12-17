@@ -1,5 +1,5 @@
 click==6.6
-webapp2==2.3
+webapp2==2.5.2
 gunicorn==19.6.0
 itsdangerous==0.24
 Jinja2==2.8
