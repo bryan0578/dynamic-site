@@ -6,9 +6,8 @@ Reusable Library
 '''
 
 from flask import Flask, render_template
-
 # Import the Page class
-from page import Page
+from templates.page import Page
 # Import the library classes
 from library import HighScores, FavoriteGame
 
