@@ -1,123 +1,88 @@
 '''
 Bryan Cash
-1/28/15
+1/21/2015
 DPW
-Dynamic Site
+Reusable Library
 '''
 
-'''Created a page class to hold the universal html code that will be apart of
-every page this will become a super class'''
 
-
+# Created Page object
 class Page(object):
     # Constructor function that initializes the class
     def __init__(self):
-        ''' Created the beginning portion of the html code with the _head
-        attribute'''
-        self._head = '''
+        # Title attribute that contains the welcome text
+        self.title = "Welcome!"
+        # Created css attribute this points to the css file in html
+        self.css = "css/styles.css"
+        # Created head attribute
+        self.head = '''
 <!DOCTYPE HTML>
 <html>
     <head>
-        <title>Welcome to the Web Store</title>
-        <link href="css/style.css" rel="stylesheet" type="text/css" />
+        <title>{self.title}</title>
+        <link href="{self.css}" rel="stylesheet" type="text/css" />
     </head>
     <body>'''
-        '''This holds the part of the body html code that will be apart of
-        every page'''
-        self._body = '''
-        <div id="container">
-            <h1> Beneath The Sky Web Store</h1>
-            <h2>Check out our shirts</h2>
-            <div id="ad">
-                <p>Today through this week we are liquidating old merchandise.
- Check out our shirts on sale. Our t-shirts are now <strong>50% off</strong>
- and our hoodie has been marked down from $55 to $35. Pick up a shirt and a
- hoodie today while supplies last!</p>
-            </div>
-            <nav id="nav">
-                <ul>
-                    <li class="active"><a href="?id=victorian_woman"><span>
-Victorian Woman</span></a></li>
-                    <li><a href="?id=three_b">Three B's</a></li>
-                    <li><a href="?id=metal_skull">Metal Skull</a></li>
-                    <li><a href="?id=f_bomb">F - Bomb</a></li>
-                    <li><a href="?id=hoody">Hoodie</a></li>
-                </ul>
-            </nav>
-        '''
-        # This holds the closing html tags
-        self._close = '''
+        # Input view, this holds all the html for the form view
+        self.input = '''
+        <div id="head">
+            <h1>High Score Tracker</h1>
+            <p>Keep track of your high scores. Just enter the name of the game
+ your high score your initials and select multiplayer or single player, hit add
+ game and see all of your high scores</p>
         </div>
+        <div id="form">
+            <h2>Keep track of your High Scores</h2>
+            <form method="GET">
+                <div class="i">
+                    <label>Name of Game: </label><input class="input"
+type="text" name="game" /><br />
+                </div>
+                <div class="i">
+                    <label>Your High Score: </label><input class="input"
+ type="number" name="score" /><br />
+                </div>
+                <div class="i">
+                    <label>Your Initials: </label><input class="input"
+ type="text" name="initials" /><br />
+                </div>
+                <div class="i">
+                    <label>Players: </label>
+                        <select class="input" name="players">
+                            <option>Single Player</option>
+                            <option>Multiplayer</option>
+                        </select><br />
+                </div>
+                <div id="button">
+                    <input type="submit" value="Add Game" class="btn" />
+                </div>
+            </form>
+        </div>'''
+        '''Attribute that will hold the heading and beginning of a div
+        container for the results view'''
+        self.container_head = '''<h2>Here is your list of High Scores</h2>
+        <div id="container">
+
+        '''
+        '''Results attribute I left this as an empty string so that the output
+        from the library could fill it in'''
+        self.results = ''
+        # Closed the container div by making a container_close attribute
+        self.container_close = '</div>'
+        # Close attribute which will contain the ending html code
+        self.close = '''
     </body>
-</html>'''
+<html>'''
 
-    '''This is the method used to print out the basic structure of the page
-    without the content pages'''
+    # Method to print all the html elements for the form view to the page
     def print_out(self):
-        return self._head + self._body + self._close
+        form_view = self.head + self.input + self.close
+        form_view = form_view.format(**locals())
+        return form_view
 
-
-'''here I created a class that inherits from the page class making the page
-class a super class. I used the Page object to show that the ContentPage will
-inherit from the Page class'''
-
-
-class ContentPage(Page):
-    # Constructor function that will initialize the class
-    def __init__(self):
-        # Constructor for the super class
-        super(ContentPage, self).__init__()
-
-        # Set up the place where the content will be and a number for the array
-        # Private attribute so a getter and setter will be needed
-        self.__list_content = ''
-        self.num = 0
-
-        '''Here I set up the part of the html that will be at the beginning of
-        the content'''
-        self.content_head = '''
-        <div id="content">
-            <h3>Shirts Info</h3>
-            '''
-        '''This is the html code that will be incorporated with the content
-        from the data objects to create the content. This and the information
-        from the data objects will create the content pages.'''
-        self.content_name = '<p><strong>Name: </strong>'
-        self.content_size = '<br /><p><strong>Sizes: </strong>'
-        self.content_img = '<div id="img"><img src="'
-        self.content_img2 = '" height="300" width="300"></div>'
-        self.content_description = '<br /><strong>Description: </strong>'
-        self.content_price = '<br /><strong>Original Price: </strong>'
-        self.content_sale = '<br /><strong>Sale Price: </strong>'
-        self.content_close = '</p></div>'
-
-    # Created a setter for the private attribute __list_content
-    # This will make it readable
-    @property
-    # this is the method to read the attribute
-    def content(self):
-        # here is where it is returned
-        return self.__list_content
-
-    '''Created a setter this will make the private attribute writeable so that
-    we can change it'''
-    @content.setter
-    # here I set up the method to pull the attribute and an array
-    def content(self, arr):
-        # here is where the array will be located
-        self.content = arr
-        # Loop through the array and get the content by the item in each array
-        for item in arr:
-            self.__list_content += item[self.num]
-
-    '''This is the method that will override the previous print out method
-    through polymorphism and return all of the content separated by the arrays
-    This will allow me to pull the information from each array independently
-    creating 5 different content pages.'''
-    def print_out(self):
-        return self._head + self._body + self.content_head + self.content_name
-        + self.data.name + self.content_size + self.data.size
-        + self.content_img + self.data.img + self.content_img2
-        + self.content_description + self.data.description
-        + self.content_price + self.data.price + self.content_sale
-        + self.data.final_price + self.content_close + self._close
+    # Method to print all of the html elements for the results view to the page
+    def print_results(self):
+        self.results = self.head + self.container_head + self.results
+        + self.container_close + self.close
+        self.results = self.results.format(**locals())
+        return self.results

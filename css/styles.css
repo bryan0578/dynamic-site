@@ -1,0 +1,129 @@
+/*
+Bryan Cash
+1/21/2015
+DPW
+Reusable Library
+*/
+/*Here I imported a web safe font from google fonts*/
+@import url(http://fonts.googleapis.com/css?family=Orbitron:700);
+/*I set the background and color for the html document to black and white*/
+html{
+    background: #000000;
+    color: #fff;
+}
+/*I set the font to arial for the body*/
+body{
+    font-family:Arial;
+}
+/*Here I styled the heading of my page*/
+#head{
+    width:35%;
+    text-align:center;
+    margin-left:auto;
+    margin-right:auto;
+    margin-top:30px;
+    margin-bottom:30px;
+}
+/*I styled my form to be centered*/
+#form{
+    width:35%;
+    border: 2px solid #fff;
+    border-radius:10px;
+    padding:20px;
+    margin-left:auto;
+    margin-right:auto;
+}
+/*Here I styled my h2 tag for the heading of my form and reults page*/
+h2{
+    text-align:center;
+    background: #34d96e;
+    background-image: -webkit-linear-gradient(top, #34d96e, #0b5710);
+    background-image: -moz-linear-gradient(top, #34d96e, #0b5710);
+    background-image: -ms-linear-gradient(top, #34d96e, #0b5710);
+    background-image: -o-linear-gradient(top, #34d96e, #0b5710);
+    background-image: linear-gradient(to bottom, #34d96e, #0b5710);
+    padding:20px;
+    width:100%;
+    margin-left:-20px;
+    margin-top:-20px;
+    border-top-left-radius:7px;
+    border-top-right-radius:7px;
+}
+/*This is the styles for my inputs*/
+.input{
+    width:100%;
+    height:20px;
+    margin:10px;
+    border-radius:5px;
+
+
+}
+/*this is for the container of my divs*/
+.i{
+    margin:50px;
+    height:20px;
+}
+/*This is the styles for the select input*/
+#input{
+    height:20px;
+}
+/*This will center the button*/
+#button{
+    text-align:center;
+}
+/*this will style the button*/
+.btn {
+  background: #34d96e;
+  background-image: -webkit-linear-gradient(top, #34d96e, #0b5710);
+  background-image: -moz-linear-gradient(top, #34d96e, #0b5710);
+  background-image: -ms-linear-gradient(top, #34d96e, #0b5710);
+  background-image: -o-linear-gradient(top, #34d96e, #0b5710);
+  background-image: linear-gradient(to bottom, #34d96e, #0b5710);
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 28px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 20px;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+}
+/*This will style the hover state of the button*/
+.btn:hover {
+  background: #fc893c;
+  background-image: -webkit-linear-gradient(top, #fc893c, #57330c);
+  background-image: -moz-linear-gradient(top, #fc893c, #57330c);
+  background-image: -ms-linear-gradient(top, #fc893c, #57330c);
+  background-image: -o-linear-gradient(top, #fc893c, #57330c);
+  background-image: linear-gradient(to bottom, #fc893c, #57330c);
+  text-decoration: none;
+}
+/*This will style the container div for the results view*/
+#container{
+    width:60%;
+    padding:20px;
+    border: 5px solid #34d96e;
+    border-radius:10px;
+    font-family: 'Orbitron', sans-serif;
+    font-size:24px;
+    color:#34d96e;
+    margin-left:auto;
+    margin-right:auto;
+
+}
+/*The next four pieces of code is taken from the output from the compile list method to style the info in the results page*/
+.results1{
+    margin-top:10px;
+    text-align:center;
+}
+.results2{
+    text-align:center;
+}
+.results3{
+    text-align:center;
+}
+#average{
+    margin:70px;
+    text-align:center;
+    color:#fff;
+}
