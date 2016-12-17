@@ -5,7 +5,7 @@ DPW
 Reusable Library
 '''
 
-from flask import Flask
+from flask import Flask, render_template
 
 # Import the Page class
 from page import Page
@@ -13,7 +13,7 @@ from page import Page
 from library import HighScores, FavoriteGame
 
 
-class MainHandler(webapp2.RequestHandler):
+class MainHandler():
     def get(self):
         # Set p as an instance of the Page class
         p = Page()
