@@ -1,0 +1,43 @@
+
+/*Bryan Cash
+  1/28/15
+  DPW
+  Dynamic Site*/
+
+body{
+   font-family: 'Lato', san-serif;
+   font-size:16px;
+
+}
+h1,h2,h3{
+    font-family: 'Montserrat', san-serif;
+    font-weight:700;
+}
+a{
+    font-family: 'Lato', san-serif;
+    font-size:21px;
+}
+ul li{
+    list-style:none;
+}
+.navbar-inverse{
+    border:none !important;
+    border-radius:0 !important;
+}
+.sidebar{
+    margin-top:-20px;
+    background:#111;
+    color:#fff;
+    height:800px;
+}
+.main{
+width:100%;
+}
+.content{
+    padding:20px;
+    magin:0 auto;
+}
+
+.btn1{
+    height:34px;
+}
