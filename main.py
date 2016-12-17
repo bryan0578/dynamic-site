@@ -5,8 +5,8 @@ DPW
 Reusable Library
 '''
 
+from flask import Flask
 
-import webapp2
 # Import the Page class
 from page import Page
 # Import the library classes
@@ -92,6 +92,12 @@ class MainHandler(webapp2.RequestHandler):
             self.response.write(p.print_out())
 
         # Print to the screen
-app = webapp2.WSGIApplication([
-    ('/', MainHandler)
-], debug=True)
+app = Flask(__name__)
+    
+@app.route("/")
+def index():
+    return render_template("index.html")
+
+
+if __name__ == "__main__":
+    app.run(debug=true)
